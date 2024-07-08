@@ -1,4 +1,3 @@
- 
 """
 Django settings for cfehome project.
 
@@ -16,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -24,16 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "True"
-
-DEBUG = config("DJANGO_DEBUG", cast=bool)
-
+# DEBUG = config("DJANGO_DEBUG", cast=bool)
 
 ALLOWED_HOSTS = [
-    ".railway.app" #https://saas.prod.railway.app
+    ".railway.app"  # https://saas.prod.railway.app
 ]
 if DEBUG:
-    ALLOWED_HOSTS +=[
+    ALLOWED_HOSTS += [
         "127.0.0.1",
         "localhost"
     ]
@@ -47,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #my-apps
+    # my-apps
     "commando",
     "visits",
 ]
@@ -83,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cfehome.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -94,21 +88,18 @@ DATABASES = {
     }
 }
 
-CONN_MAX_AGE =  config("CONN_MAX_AGE", cast=int, default=30)
-DATABASE_URL =  config("DATABASE_URL", default=None)
+CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=30)
+DATABASE_URL = config("DATABASE_URL", default=None)
 
 if DATABASE_URL is not None:
     import dj_database_url
     DATABASES = {
         "default": dj_database_url.config(
-        default=DATABASE_URL,
-        conn_health_checks=True,
-        conn_max_age=CONN_MAX_AGE,
+            default=DATABASE_URL,
+            conn_health_checks=True,
+            conn_max_age=CONN_MAX_AGE,
         )
-        
-
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -128,7 +119,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -139,7 +129,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -157,11 +146,7 @@ STATICFILES_DIRS = [
 # output for python manage.py collectstatic
 # local cdn
 STATIC_ROOT = BASE_DIR / "local-cdn"
-STATICFILES_STORAGE = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
