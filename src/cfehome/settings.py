@@ -157,12 +157,7 @@ STATICFILES_DIRS = [
 # output for python manage.py collectstatic
 # local cdn
 STATIC_ROOT = BASE_DIR / "local-cdn"
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFileStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
