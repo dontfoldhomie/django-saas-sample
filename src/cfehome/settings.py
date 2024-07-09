@@ -148,7 +148,9 @@ STATICFILES_DIRS = [
 
 # output for python manage.py collectstatic
 # local cdn
-STATIC_ROOT = BASE_DIR / "local-cdn"
+STATIC_ROOT = BASE_DIR.parent / "local-cdn"
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR / "prod-cdn"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
