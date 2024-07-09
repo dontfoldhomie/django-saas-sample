@@ -151,7 +151,13 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR.parent / "local-cdn"
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "prod-cdn"
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
