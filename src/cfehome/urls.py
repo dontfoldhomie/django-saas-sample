@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from landing import views as landing_views
 
 from .views import home_view, about_view
 
 urlpatterns = [
-    path("", home_view), #index page -> root page
+    path("", landing_views.landing_page_view, name='home'), #index page -> root page
     path("about/", about_view),
     path("hello-world/", home_view),
     path("hello-world.html", home_view),
