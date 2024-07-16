@@ -1,71 +1,9 @@
-
-
-
 <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">Is college still <span class="text-blue-600 dark:text-blue-500">worth it</span> for you?</h1>
 <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-center">College prices have grown to become luxury brands. Fill out this form to see if it<br> is still worth it, and other paths you can take to find a career!</p>
 
 
-
-<br><br>
-<div>
-    <form class="max-w-sm mx-auto">
-        <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
-        <div class="relative">
-        
-        <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-7 pl-5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
-        </div>
-    </form>
-
-    <br>
-
-    <form class="max-w-sm mx-auto">
-        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">What school do want to go to?</label>
-        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option selected="selected" disabled>
-            Choose University
-        </option>
-        <option>SDSU</option>
-        <option>UCSD</option>
-        <option>UCLA</option>
-        <option>USC</option>
-        </select>
-    </form>
-    <br>
-    <form class="max-w-sm mx-auto">
-        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">What do you want to study?</label>
-        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option selected="selected" disabled>
-            Choose Major
-        </option>
-        <option>Computer Science</option>
-        <option>Business Administration</option>
-        <option>Psychology</option>
-        <option>Biology</option>
-        </select>
-    </form>
-    <br>
-    <form class="max-w-sm mx-auto">
-        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Will you be paying for room and board?</label>
-        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option selected="selected" disabled>
-            Yes/No
-        </option>
-        <option>Yes</option>
-        <option>No</option>
-        </select>
-    </form>
-    <br>
-
-    <form class="max-w-sm mx-auto">
-        <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How much assistance will you be receiving? (Scholarship, grants, etc.)</label>
-        <div class="relative">
-        
-        <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-7 pl-5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter dollar amount">
-        </div>
-    </form>
-<br>
-    <div class="flex justify-center">.
-        <button type="button" class=" text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">calculate!</button>
-    </div>
-
-</div>
+<form action="/calculator/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
