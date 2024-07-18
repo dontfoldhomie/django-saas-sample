@@ -24,6 +24,7 @@ from .views import home_view, about_view
 urlpatterns = [
     path("", landing_views.landing_page_view, name='home'), #index page -> root page
     path("calculator/", calculator_views.calculator_page_view, name='calculator'),
+    path(("calculator/upload"), calculator_views.upload),
     #path("hello-world/", home_view),
    # path("hello-world.html", home_view),
     #path('admin/', admin.site.urls),
