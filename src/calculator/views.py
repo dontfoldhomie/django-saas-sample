@@ -20,3 +20,6 @@ def calculator_page_view(request):
     else:
         form = CalculatorForm()
     return render(request, 'calculator/main_calculator.html', {"form": form})
+
+def upload(request):
+    render(request, 'calculator.upload.html')
