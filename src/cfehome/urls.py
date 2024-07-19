@@ -27,5 +27,5 @@ urlpatterns = [
     #path(("calculator/upload"), calculator_views.upload),
     #path("hello-world/", home_view),
    # path("hello-world.html", home_view),
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]
