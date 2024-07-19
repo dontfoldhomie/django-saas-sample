@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # my-apps
     "commando",
     "visits",
-    "calculator"
+    #"calculator"
 
 ]
 
