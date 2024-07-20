@@ -5,7 +5,7 @@
 <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-center">College prices have grown to become luxury brands. Fill out this form to see if it<br> is still worth it, and other paths you can take to find a career!</p>
 <br>
 
-<form method="POST" class="max-w-sm mx-auto" action="{% url 'calculator/main.html' %}>
+<form method="POST" class="max-w-sm mx-auto" action="{% url 'calculator' %}>
     {% csrf_token %}
     <div class="mb-5">
       <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
