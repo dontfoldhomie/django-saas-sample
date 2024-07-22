@@ -37,6 +37,8 @@ if DEBUG:
         "django-saas-sample-production.up.railway.app", 
     ]
 
+CSRF_TRUSTED_ORIGINS = ['https://django-saas-sample-production.up.railway.app']
+
 # Application definition
 
 INSTALLED_APPS = [
