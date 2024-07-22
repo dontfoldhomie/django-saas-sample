@@ -27,14 +27,14 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 DEBUG = config("DJANGO_DEBUG", cast=bool)
 BASE_URL = config("BASE_URL", default=None)
 ALLOWED_HOSTS = [
-    "django-saas-sample-production.up.railway.app",  # https://saas.prod.railway.app
+    "https://django-saas-sample-production.up.railway.app",  # https://saas.prod.railway.app
 ]
 
 if DEBUG:
     ALLOWED_HOSTS += [
         "127.0.0.1",
         "localhost",
-        "django-saas-sample-production.up.railway.app", 
+        "https://django-saas-sample-production.up.railway.app", 
     ]
 
 # Application definition
