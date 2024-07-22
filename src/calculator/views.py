@@ -13,6 +13,6 @@ def calculator_page_view(request, *args, **kwargs):
         calculator_object = form.save()
         context['object'] = calculator_object
         context['created'] = True
-        return render(request, "calculator/main.html")
+        return render(request, "landing/main.html")
 
     return render(request, "calculator/main.html", context=context)
