@@ -9,6 +9,7 @@ def calculator_page_view(request, *args, **kwargs):
     context = {
         "form": form
     }
+    
     if form.is_valid():
         calculator_object = form.save()
         context['object'] = calculator_object
