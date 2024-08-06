@@ -1,4 +1,3 @@
-
 {% load widget_tweaks %}
 <section class="dark dark:bg-gray-900">
   <br>
@@ -6,44 +5,42 @@
   <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-center">College prices have grown to become luxury brands. Fill out this form to see if it<br> is still worth it, and other paths you can take to find a career!</p>
   <br>
 
-  <form method="POST" class="dark max-w-sm mx-auto dark:bg-gray-900 p-30">
+  <form method="POST" class="dark max-w-sm mx-auto dark:bg-gray-900 p-30" id="collegeForm">
       {% csrf_token %}
       <div class="mb-5">
         <label for="name" class="dark:bg-gray-900 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
-        {% render_field form.name class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Im Him" required=True %}    </div>
+        {% render_field form.name class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Im Him" required=True id="name" %}    
+      </div>
 
       <div class="mb-5">
         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
-        {% render_field form.email class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="the_og@schoolsucks.com" required=True %}    </div>
+        {% render_field form.email class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="the_og@schoolsucks.com" required=True id="email" %}    
+      </div>
 
       <div>
           <label for="school" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your school</label>
-          {% render_field form.university class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True%}
+          {% render_field form.university class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True id="school" %}
       </div>
       <br>
 
       <div>
           <label for="major" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">What are you thinking about majoring in?</label>
-          {% render_field form.major class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True%}
-
+          {% render_field form.major class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True id="major" %}
       </div>
       <br>
       <div>
         <label for="yearly_tuition" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How much will tuition cost per year?</label>
-        {% render_field form.yearly_tuition class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True%}
-
+        {% render_field form.yearly_tuition class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True id="yearly_tuition" %}
     </div>
     <br>
     <div>
       <label for="financial_assistance" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How much are you paying yourself? (Not with debt)</label>
-      {% render_field form.financial_assistance class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True%}
-
+      {% render_field form.financial_assistance class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True id="financial_assistance" %}
   </div>
   <br>
   <div>
     <label for="years_in_school" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How long will you be in school?</label>
-    {% render_field form.years_in_school class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True%}
-
+    {% render_field form.years_in_school class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=True id="years_in_school" %}
 </div>
       <br>
       <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
@@ -53,3 +50,20 @@
   {% render}
 </section>
 
+<script>
+  document.getElementById('collegeForm').addEventListener('submit', function(event) {
+    const tuition = parseFloat(document.getElementById('yearly_tuition').value);
+    const assistance = parseFloat(document.getElementById('financial_assistance').value);
+    const years = parseFloat(document.getElementById('years_in_school').value);
+
+    if (!isNaN(tuition) && !isNaN(assistance) && !isNaN(years) && years !== 0) {
+      const costPerYear = tuition - assistance;
+      const totalCost = costPerYear * years;
+
+      alert(`Cost per year: ${costPerYear}\nTotal cost for ${years} years: ${totalCost}`);
+    } else {
+      alert('Please enter valid numbers for all fields.');
+      event.preventDefault(); // Prevent form submission if calculations are not valid
+    }
+  });
+</script>
